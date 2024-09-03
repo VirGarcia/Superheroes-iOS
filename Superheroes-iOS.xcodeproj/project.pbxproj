@@ -56,15 +56,63 @@
 		6C04CEE92C87242A0062524B /* Superheroes-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				6C04CEEA2C87242A0062524B /* AppDelegate.swift */,
+				6C04CEFE2C872F420062524B /* Data */,
+				6C04CEFF2C872F4A0062524B /* ViewControllers */,
+				6C04CF002C872F590062524B /* ViewCells */,
+				6C04CF012C872F670062524B /* Views */,
+				6C04CF022C872FC10062524B /* Utils */,
+				6C04CF032C872FCC0062524B /* Fonts */,
+			);
+			path = "Superheroes-iOS";
+			sourceTree = "<group>";
+		};
+		6C04CEFE2C872F420062524B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6C04CEFF2C872F4A0062524B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6C04CF002C872F590062524B /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewCells;
+			sourceTree = "<group>";
+		};
+		6C04CF012C872F670062524B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6C04CF022C872FC10062524B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
 				6C04CEEC2C87242A0062524B /* SceneDelegate.swift */,
+				6C04CEEA2C87242A0062524B /* AppDelegate.swift */,
 				6C04CEEE2C87242A0062524B /* ViewController.swift */,
 				6C04CEF02C87242A0062524B /* Main.storyboard */,
 				6C04CEF32C87242B0062524B /* Assets.xcassets */,
 				6C04CEF52C87242B0062524B /* LaunchScreen.storyboard */,
 				6C04CEF82C87242B0062524B /* Info.plist */,
 			);
-			path = "Superheroes-iOS";
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6C04CF032C872FCC0062524B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
