@@ -42,6 +42,18 @@ class ListViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showDetail") {
+            let viewController = segue.destination as! DetailViewController
+            
+            let indexPath = tableView.indexPathForSelectedRow!
+            viewController.superHero = superHeroList[indexPath.row]
+            
+            tableView.deselectRow(at: indexPath, animated: false)
+            
+        }
+    }
 
     
 }
