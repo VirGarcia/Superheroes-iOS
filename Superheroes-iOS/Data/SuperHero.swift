@@ -16,25 +16,13 @@ struct SuperHeroResponse: Codable {
 struct SuperHero: Codable {
     let id: String
     let name: String
-    let powerstats: Stats
-    let biography:Biography
-    //let work:Work
-    var image: Image
+    let image: Image
 }
 
 struct Image: Codable {
     let url: String
 }
 
-struct Biography: Codable {
-    let publisher: String
-}
 
-struct Stats: Codable {
-    let intelligence: String?
-    let strength: String?
-    let speed: String?
-    let durability: String?
-    let power: String?
-    let combat: String?
-}
+
+
