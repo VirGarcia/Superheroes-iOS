@@ -32,13 +32,15 @@ struct Powerstats: Codable {
 }
 
 struct Biography: Codable {
-    let fullName: String?
-    let alignment: String?
-    let publisher: String?
+    let realName: String
+    let placeOfBirth: String
+    let publisher: String
+    let alignment: String
     
     enum CodingKeys: String, CodingKey {
-        case alignment, publisher
-        case fullName = "full-name"
+        case publisher, alignment
+        case realName = "full-name"
+        case placeOfBirth = "place-of-birth"
     }
 }
 
