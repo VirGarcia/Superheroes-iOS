@@ -20,6 +20,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        avatarImageView.roundCorners(radius: 8)
 
         // Do any additional setup after loading the view.
         

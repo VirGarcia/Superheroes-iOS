@@ -27,22 +27,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="240"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2LT-eG-7J4" userLabel="Avatar Image View">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddr-a0-dZY" userLabel="Card View">
                                                     <rect key="frame" x="20" y="11" width="353" height="218"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVL-D2-9L6" userLabel="Name Label">
-                                                    <rect key="frame" x="20" y="193" width="353" height="36"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                    <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="0.59892384105960261" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2LT-eG-7J4" userLabel="Avatar Image View">
+                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="218"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVL-D2-9L6" userLabel="Name Label">
+                                                            <rect key="frame" x="0.0" y="182" width="353" height="36"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="0.59892384105960261" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="avatarImageView" destination="2LT-eG-7J4" id="Mly-Yr-XtF"/>
+                                            <outlet property="cardView" destination="ddr-a0-dZY" id="zQ0-lW-Pwc"/>
                                             <outlet property="nameLabel" destination="uVL-D2-9L6" id="Jj9-GP-TcC"/>
                                             <segue destination="p7T-ad-ov5" kind="show" identifier="showDetail" id="1yj-Ea-9FC"/>
                                         </connections>
@@ -74,14 +82,14 @@
         <scene sceneID="cDL-Uo-IPf">
             <objects>
                 <viewController id="p7T-ad-ov5" customClass="DetailViewController" customModule="Superheroes_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nMa-cG-GEk">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="nMa-cG-GEk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yg0-9e-uWs">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yg0-9e-uWs">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-Zj-d6U" userLabel="Content View">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-Zj-d6U" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jo2-UC-0VG" userLabel="Avatar Image View">

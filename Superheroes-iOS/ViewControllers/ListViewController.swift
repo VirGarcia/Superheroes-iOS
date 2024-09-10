@@ -15,18 +15,28 @@ class ListViewController: UIViewController, UITableViewDataSource {
     var superHeroList: [SuperHero] = []
     
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         tableView.dataSource = self
         
-        SuperHeroProvider.findSuperHeroesByName("Super", withResult: { results in
+        /*SuperHeroProvider.findSuperHeroesByName("Super", withResult: { [unowned self] results in
             self.superHeroList = results
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-        })
+        })*/
+        
+        Task {
+            let results = try? await SuperHeroProvider.findSuperHeroesByName("Super")
+            
+            self.superHeroList = results!
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +44,7 @@ class ListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SuperHeroViewCell
         
         let superHero = superHeroList[indexPath.row]
@@ -48,10 +59,10 @@ class ListViewController: UIViewController, UITableViewDataSource {
             let viewController = segue.destination as! DetailViewController
             
             let indexPath = tableView.indexPathForSelectedRow!
+            
             viewController.superHero = superHeroList[indexPath.row]
             
             tableView.deselectRow(at: indexPath, animated: false)
-            
         }
     }
 
