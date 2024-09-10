@@ -35,7 +35,7 @@ class SuperHeroProvider {
             return []
         }
         
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let (data, _) = try await URLSession.shared.data(from: url)
         
         let result = try JSONDecoder().decode(SuperHeroResponse.self, from: data)
         return result.results

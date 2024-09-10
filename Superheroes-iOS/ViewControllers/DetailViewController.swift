@@ -16,6 +16,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var placeOfBirthLabel: UILabel!
     @IBOutlet weak var alignmentLabel: UILabel!
     
+    @IBOutlet weak var intelligenceProgressView: UIProgressView!
+    
+    
+    @IBOutlet weak var raceLabel: UILabel!
+    
+
+    @IBOutlet weak var genderLabel: UILabel!
+    
+    @IBOutlet weak var genderIconsView: UIImageView!
+    
+    @IBOutlet weak var baseTextView: UITextView!
+    
     var superHero: SuperHero? = nil
     
     override func viewDidLoad() {
@@ -37,6 +49,18 @@ class DetailViewController: UIViewController {
                 alignmentLabel.textColor = UIColor.systemGreen
             } else {
                 alignmentLabel.textColor = UIColor.systemRed
+            }
+            intelligenceProgressView.progress = (Float((superHero.powerstats.intelligence)!) ?? 0.0) / 100.0
+            raceLabel.text = superHero.appearance.race
+            baseTextView.text = superHero.work.base
+            genderLabel.text = superHero.appearance.gender
+            
+            if (genderLabel.text == "Male") {
+                genderIconsView.image = UIImage(named: "gender-icons/male")
+            } else if (genderLabel.text == "Female") {
+                genderIconsView.image = UIImage(named: "gender-icons/female")
+            } else {
+                genderIconsView.image = UIImage(named: "gender-icons/both")
             }
         }
     }

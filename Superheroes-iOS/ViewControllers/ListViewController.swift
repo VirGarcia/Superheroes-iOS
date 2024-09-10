@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     
     
     var superHeroList: [SuperHero] = []
+    var superheroInitialList: [SuperHero] = []
     
     
    
@@ -29,8 +30,21 @@ class ListViewController: UIViewController, UITableViewDataSource {
             }
         })*/
         
+        /*SuperheroProvider.searchByName(query: "a", completionHandler: { [weak self] results in
+            self?.superheroInitialList = results
+            self?.superheroList = results
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        })*/
+        
+        let search = UISearchController(searchResultsController: nil)
+        //search.delegate = self
+        search.searchBar.delegate = self
+        self.navigationItem.searchController = search
+        
         Task {
-            let results = try? await SuperHeroProvider.findSuperHeroesByName("Super")
+            let results = try? await SuperHeroProvider.findSuperHeroesByName("a")
             
             self.superHeroList = results!
             DispatchQueue.main.async {
@@ -52,6 +66,29 @@ class ListViewController: UIViewController, UITableViewDataSource {
         cell.render(superHero: superHero)
         
         return cell
+    }
+    
+    // MARK: SearchBar delegate
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        SuperHeroProvider.findSuperHeroesByName(searchBar.text!, withResult: { [weak self] results in
+            self?.superHeroList = results
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        })
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.superHeroList = self.superheroInitialList
+        self.tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText.isEmpty) {
+            self.superHeroList = self.superheroInitialList
+            self.tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
