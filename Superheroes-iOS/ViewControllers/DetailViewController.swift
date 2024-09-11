@@ -16,6 +16,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var placeOfBirthLabel: UILabel!
     @IBOutlet weak var alignmentLabel: UILabel!
     
+    @IBOutlet weak var numberIntell: UILabel!
+    
     @IBOutlet weak var intelligenceProgressView: UIProgressView!
     
     
@@ -50,6 +52,7 @@ class DetailViewController: UIViewController {
             } else {
                 alignmentLabel.textColor = UIColor.systemRed
             }
+            numberIntell.text = superHero.powerstats.intelligence
             intelligenceProgressView.progress = (Float((superHero.powerstats.intelligence)!) ?? 0.0) / 100.0
             raceLabel.text = superHero.appearance.race
             baseTextView.text = superHero.work.base

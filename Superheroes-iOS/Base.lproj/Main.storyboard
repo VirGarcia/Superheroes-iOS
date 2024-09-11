@@ -177,15 +177,17 @@
                                                     <constraint firstAttribute="height" constant="82" id="eay-ea-LU0"/>
                                                 </constraints>
                                             </stackView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Fi-a9-2BT" userLabel="Intelligence Progress View">
-                                                <rect key="frame" x="159" y="489" width="150" height="4"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.84302004419191923" green="0.58956005375428278" blue="0.19022560963683444" alpha="0.7824917218543046" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inteligencia:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJL-ed-oY5" userLabel="Inteligencia">
-                                                <rect key="frame" x="8" y="481" width="92" height="21"/>
+                                                <rect key="frame" x="8" y="463" width="92" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPE-e3-n93" userLabel="NumberIntell">
+                                                <rect key="frame" x="120" y="463" width="36" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -204,7 +206,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ddd-us-dTQ" userLabel="Gender">
-                                                <rect key="frame" x="136" y="509" width="150" height="21"/>
+                                                <rect key="frame" x="120" y="509" width="150" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -218,7 +220,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cyborg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Tg-O9-kzw" userLabel="Race">
-                                                <rect key="frame" x="123" y="684" width="139" height="21"/>
+                                                <rect key="frame" x="120" y="684" width="139" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -229,13 +231,18 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Metropolis" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uw1-UH-l5n">
-                                                <rect key="frame" x="127" y="721" width="258" height="75"/>
+                                                <rect key="frame" x="114" y="721" width="258" height="169"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Fi-a9-2BT" userLabel="Intelligence Progress View">
+                                                <rect key="frame" x="195" y="473" width="150" height="4"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" red="0.84302004419191923" green="0.58956005375428278" blue="0.19022560963683444" alpha="0.7824917218543046" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </progressView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -274,6 +281,7 @@
                         <outlet property="genderIconsView" destination="fe2-72-XLx" id="6eY-Mk-Lft"/>
                         <outlet property="genderLabel" destination="ddd-us-dTQ" id="9mY-JS-5BS"/>
                         <outlet property="intelligenceProgressView" destination="7Fi-a9-2BT" id="QMp-wu-nwp"/>
+                        <outlet property="numberIntell" destination="XPE-e3-n93" id="UjF-BY-Nnm"/>
                         <outlet property="placeOfBirthLabel" destination="r23-IN-qH1" id="Gts-O3-zio"/>
                         <outlet property="publisherLabel" destination="r23-IN-qH1" id="U1J-UB-4TU"/>
                         <outlet property="raceLabel" destination="4Tg-O9-kzw" id="WQh-xl-MND"/>
@@ -289,8 +297,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UN6-BR-M4G" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F9f-Ty-fFr">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="F9f-Ty-fFr">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
